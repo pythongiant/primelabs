@@ -1,0 +1,90 @@
+{% extends 'home/base.html' %}
+{% block assetfile %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+<script src="{% static 'js/script.js' %}"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock assetfile %}
+{% block content %}
+<!-- Sidebar (hidden by default) -->
+
+<!-- Top menu -->
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto;background-color:#f5f5f5 !important ">
+    
+    <div class="w3-right w3-padding-16"><a href="mailto:primelabs@gmail.com">MAIL</a></div>
+    <div class="w3-center w3-padding-16">Primelabs</div>
+  </div>
+</div>
+  
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+{% comment %} 
+<div class="prod">
+
+<div class="product">
+<div><img ></div>
+<div>{{prod.name}}</div>
+</div>
+</div>
+{% endfor %} {% endcomment %}
+  <!-- First Photo Grid-->
+  <div style="display:flex;flex-wrap:wrap;text-align:center;justify-content:center;">
+  {% for prod in product  %}
+  
+    <div style="width:20%;margin:50px;">
+      <img src="{% static 'img/products/' %}{{prod.image}}" style="HEIGHT:200PX;WIDTH:200px;">
+      <h3>{{prod.name}}</h3>
+      <p>{{prod.detail|safe}}</p>
+    </div>
+    
+  
+  {% endfor %}
+  </div>
+  {% comment %} <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div> {% endcomment %}
+  
+  <hr id="about">
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32 w3-center">  
+    <h3>Raise an Enquiry</h3><br>
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd8NBLjNpR3FkB5k24hJ_FzDH5WLbjBfHTevaSWoxYt3Apkug/viewform?embedded=true" width="640" height="1114" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <div style="font-size:1.2em" class="w3-padding-32">
+      <h4><b>PRIMELABS INDIA</b></h4>
+      <h6><i>Contact:</i></h6>
+      <p>Phone:+91 9910004895</p>
+      <p>email:<a href="mailto:primelabs@gmail.com">primelabs@gmail.com</a></p>
+      
+    </div>
+  </div>
+  <hr>
+  
+  <!-- Footer -->
+  
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+{% endblock content %}
